@@ -1,0 +1,8 @@
+make:
+  image: raabf/latex-versions:texlive2019
+  stage: build
+  script:
+    - make all
+  artifacts:
+    paths:
+    - ./main.pdf
