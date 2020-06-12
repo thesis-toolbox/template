@@ -76,6 +76,15 @@ Then, put the following string into corresponding text field:
 txs:///compile | txs:///bibliography | txs:///compile | txs:///view
 ```
 
+If you still experience problems or weird error messages, please try using biber.
+
+### TeXstudio has a broken navigation!
+
+Most likely you have not enabled the necessary crawlers.
+Go to: `Options -> Configure TeXstudio... -> Completion` and check `biblatex.cwl` and `subfiles.cwl` and whatever else you need.
+
+Close and reopen TeXstudio to fully reload the config if needed.
+
 ### Some referenced files are not found - is their path wrong?
 
 ```
