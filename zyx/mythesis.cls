@@ -58,8 +58,6 @@
 \cfoot[\color{gray}{\gitshort}]{\color{gray}{\gitshort}}
 }{}
 
-% Cover, abstract, table of contents, etc.
-\AtBeginDocument{\subfile{./zyx/preface.tex}}
 
 % Store config values into title and author of the document
 \title{\myTitle}
