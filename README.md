@@ -76,6 +76,21 @@ Then, put the following string into corresponding text field:
 txs:///compile | txs:///bibliography | txs:///compile | txs:///view
 ```
 
+### Some referenced files are not found - is their path wrong?
+
+```
+LaTeX Warning: File `./img/SomeName.pdf' not found on input line SomeLine.
+
+! Package pdftex.def Error: File `./img/SomeName.pdf' not found: using draft setting.
+```
+
+Unfortunately, different versions of the subfiles package used in the template require different logics for the provided path name.
+This template is configured for the most recent version, but thereby will fail for older versions.
+Several of these error messages most likely indicate that your system is using and outdated version.
+If you cannot update the LaTeX-Packages in your system, you can try the following workaround:
+
+Copy this file into your main directory [subfiles.sty](https://raw.githubusercontent.com/gsalzer/subfiles/1.6/subfiles.sty)
+
 ## Customized Templates for Universities – Official and Unofficial
 
 * We are working on that …
