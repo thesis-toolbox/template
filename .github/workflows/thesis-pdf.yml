@@ -21,12 +21,13 @@ jobs:
         # Graphics managed using git-lfs should be downloaded for usage in tex
         lfs: true
 
-    # Compile the thesis using the existing latex-action from xu cheng
+    # Compile the thesis using the same docker image and Make
     - name: LaTeX compilation
-      uses: xu-cheng/latex-action@1.2.1
+      uses: maxi-k/latex-make-action@v1
       with:
-        root_file: main.tex
-        args: -cd -use-make -pdf -file-line-error -interaction=nonstopmode -shell-escape
+        # The root LaTeX file to be compiled
+        task: all
+        working_directory: thesis
 
     # Publish the resulting 'main.pdf' file as an artifact of the build job
     - name: Publish the generated PDF file as an artifact
