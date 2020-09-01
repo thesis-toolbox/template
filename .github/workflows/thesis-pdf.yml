@@ -1,0 +1,37 @@
+name: Thesis PDF
+
+# Start job on every PR, and whenever .tex, .sty, 
+# or the workflow itself has changed on master.
+on:
+  push:
+    branches: [ master ]
+    paths: [ '**.tex', '**.sty', '.github/workflows/**.yml' ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out the repository under $GITHUB_WORKSPACE, so the job can access it
+    - name: Checkout Project
+      uses: actions/checkout@v2
+      with:
+        # Graphics managed using git-lfs should be downloaded for usage in tex
+        lfs: true
+
+    # Compile the thesis using the same docker image and Make
+    - name: LaTeX compilation
+      uses: maxi-k/latex-make-action@v1
+      with:
+        # The root LaTeX file to be compiled
+        task: all
+        working_directory: thesis
+
+    # Publish the resulting 'main.pdf' file as an artifact of the build job
+    - name: Publish the generated PDF file as an artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: main.pdf
+        path: main.pdf
