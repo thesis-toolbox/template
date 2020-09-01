@@ -76,6 +76,30 @@ Then, put the following string into corresponding text field:
 txs:///compile | txs:///bibliography | txs:///compile | txs:///view
 ```
 
+If you still experience problems or weird error messages, please try using biber.
+
+### TeXstudio has a broken navigation!
+
+Most likely you have not enabled the necessary crawlers.
+Go to: `Options -> Configure TeXstudio... -> Completion` and check `biblatex.cwl` and `subfiles.cwl` and whatever else you need.
+
+Close and reopen TeXstudio to fully reload the config if needed.
+
+### Some referenced files are not found - is their path wrong?
+
+```
+LaTeX Warning: File `./img/SomeName.pdf' not found on input line SomeLine.
+
+! Package pdftex.def Error: File `./img/SomeName.pdf' not found: using draft setting.
+```
+
+Unfortunately, different versions of the subfiles package used in the template require different logics for the provided path name.
+This template is configured for the most recent version, but thereby will fail for older versions.
+Several of these error messages most likely indicate that your system is using and outdated version.
+If you cannot update the LaTeX-Packages in your system, you can try the following workaround:
+
+Copy this file into your main directory [subfiles.sty](https://raw.githubusercontent.com/gsalzer/subfiles/1.6/subfiles.sty)
+
 ## Customized Templates for Universities – Official and Unofficial
 
 * We are working on that …
