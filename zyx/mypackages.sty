@@ -29,8 +29,21 @@
 \usepackage[T1]{fontenc}
 % Better formulas and align environments
 \usepackage{amssymb,amsmath}
-% add light and bold true type fonts aka monospace
+% The default Computer Modern font of latex with added light and bold true type fonts aka monospace
 \usepackage[lighttt]{lmodern}
+% Hacky bugfix for some wrongly defined fonts in lighttt
+\ttfamily\DeclareFontShape{T1}{lmtt}{m}{it}{<->sub*lmtt/m/sl}{}
+%%%
+% Configure your fonts - see https://r2src.github.io/top10fonts/ for details
+% Just uncomment one of the following packages to change your font
+% Or comment out all of them for LaTeX's default font
+%%%
+\usepackage[nott,light]{kpfonts}
+%\usepackage{fourier}
+%\usepackage{libertine}
+%\usepackage{dejavu}
+%\usepackage{mathpazo}
+%%% End font config
 % Magic for better text spread and hyphenations
 \usepackage[final]{microtype}
 % Allow inclusion of images
@@ -73,9 +86,6 @@ numbers=left, numberstyle=\tiny, numberfirstline=true,
 % Uncomment, if only each fifth number should be printed
 % firstnumber=1, stepnumber=5, numbersep=5pt
 captionpos=b, float=htbp, xleftmargin=2em,frame=single,framexleftmargin=1.5em, basicstyle=\ttfamily \lst@ifdisplaystyle\fontsize{\f@size}{\f@size}\fi \selectfont}
-% Hacky bugfix for some wrongly defined fonts in lighttt
-\ttfamily
-\DeclareFontShape{T1}{lmtt}{m}{it}{<->sub*lmtt/m/sl}{}
 \newcaptionname{ngerman}{\lstlistingname}{Programm}
 % subfiles as an alternative for include or input
 % Hence, all .tex-files can be compiled solely
