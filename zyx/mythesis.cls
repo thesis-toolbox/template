@@ -55,7 +55,7 @@
 
 %% Adding the git shorttag print on every page in work in progress mode
 \ifthenelse{\boolean{\mywip}}{
-\cfoot[\color{gray}{\gitshort}]{\color{gray}{\gitshort}}
+\ifoot[\normalfont\texttt{\color{gray}{\gitshort}}]{\normalfont\texttt{\color{gray}{\gitshort}}}
 }{}
 
 

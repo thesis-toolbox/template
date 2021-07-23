@@ -49,9 +49,15 @@ bindingoffset=0.5cm,heightrounded,
 marginparwidth=2cm,marginparsep=0.25cm,
 headsep=2em,footskip=3em]{geometry}
 
+% Store git information within the pdf keywords
+\ifdefempty{\gitid}{%
+\newcommand*{\gitkeywords}{}
+}{%
+\newcommand*{\gitkeywords}{git:\ \gitbranch\ \gitid}
+}
+
 % Set invisible, but clickable links into the pdf
-\usepackage[pdfusetitle,bookmarksnumbered,hidelinks,bookmarksopen,
-pdfkeywords={git:\ \gitbranch\ \gitid}]{hyperref}
+\usepackage[pdfusetitle,bookmarksnumbered,hidelinks,bookmarksopen,pdfkeywords={\gitkeywords}]{hyperref}
 % Better references
 \ifthenelse{\equal{\mylanguage}{de}}{%
 \usepackage[capitalise,noabbrev,ngerman]{cleveref}
