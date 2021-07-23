@@ -92,6 +92,14 @@
 }{}
 }
 
+%% Adding author name and thesis title in the header of the first page in wip mode
+\ifthenelse{\boolean{\mywip}}{
+ % This hack needs to be undone later
+ \renewcommand*{\chapterpagestyle}{scrheadings}
+ \ihead{\myAuthor}
+ \ohead{\myThesisType \\[0.2em] \myTitle \vspace{-1.5em}}
+}{}
+
 \begingroup
 % Temporarily overwriting clearpage command
 \let\cleardoublepage\relax
@@ -102,6 +110,10 @@
 
 \microtypesetup{protrusion=false}
 \cleardoublepage
+% Revert the hack to show a header on the abstract page for wip
+\ifthenelse{\boolean{\mywip}}{
+ \renewcommand*{\chapterpagestyle}{plain}
+}{}
 \ifthenelse{\equal{\mylanguage}{de}}{
  \currentpdfbookmark{Inhaltsverzeichnis}{contents}
 }{
