@@ -1,0 +1,22 @@
+name: Thesis as pdf
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: raabf/latex-versions:texlive2019
+
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v2
+
+    - name: Compile LaTeX
+      run: make all
+
+    - name: Upload pdf
+      uses: actions/upload-artifact@v1
+      with:
+        name: main.pdf
+        path: main.pdf

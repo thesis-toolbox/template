@@ -5,7 +5,7 @@ It is loaded with a lot of tricks and magic to make sure your writing is enjoyab
 
 <!---[A preview of the compiled pdf is available here!](https://gitlab.com/thesis-toolbox/template/-/jobs/artifacts/master/raw/main.pdf?job=make) --->
 
-[A preview of the compiled pdf is available here! (Please visit the url given on this page)](https://circleci.com/api/v1.1/project/github/thesis-toolbox/template/latest/artifacts)
+[A preview of the compiled pdf is available here! (Please pick the first job and find it under artefacts)](../../actions/workflows/thesis-pdf.yml)
 
 
 ## Main Feature Overview
@@ -13,7 +13,7 @@ It is loaded with a lot of tricks and magic to make sure your writing is enjoyab
 * **Out of the Box Usage Without Configuration**
   Get your copy of this template and start writing. The only required config file (`./myconfig.sty`) asks for your name and thesis topic. No installations or further adjusted are needed to get your pdf.
 * **Reliable Builds and Continuous Integration**
-  No time or space to struggle with a full LaTeX installation? This template has a special Makefile to use docker for the compilation. If you prefer, you don't need to run and compile anything on your local machine and let cloud-based CI (GitLab or CircleCI) do the job for you.
+  No time or space to struggle with a full LaTeX installation? This template has a special Makefile to use docker for the compilation. If you prefer, you don't need to run and compile anything on your local machine and let cloud-based CI (Github or GitLab) do the job for you.
 * **No LaTeX-Skills Required**
   Do not be afraid of using LaTeX. For writing your thesis, only a few minimal commands are enough and most of them can be copy pasted from existing snippets. You can even write most of your thesis in markdown (Requires Makefile usage.
 
