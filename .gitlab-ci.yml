@@ -1,3 +1,6 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: normal
+
 make:
   image: raabf/latex-versions:texlive2019
   stage: build
