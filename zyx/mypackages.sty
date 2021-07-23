@@ -118,10 +118,33 @@ captionpos=b, float=htbp, xleftmargin=2em,frame=single,framexleftmargin=1.5em, b
 % Situation sensitive spacing at the end of commands
 \usepackage{xspace}
 % literature references
-\usepackage[style=ieee,uniquename=init]{biblatex}
+\usepackage[style=numeric-comp,uniquename=init, maxcitenames=2, minbibnames=5, maxbibnames=5, giveninits=true]{biblatex}
 % other styles suitable: ieee alphabetic-verb numeric-comp [Just try them^^]
 % Prevent line break at before citation number in textcite
 \renewcommand\namelabeldelim{\addnbspace}
+% Delete some fields out of the bibentries
+\AtEveryBibitem{%
+ \clearfield{note}%
+ \clearfield{pages}%
+ \clearfield{volume}%
+ %
+ \ifentrytype{book}{
+  \clearfield{url}%
+  \clearfield{urldate}%
+ }{}
+ \ifentrytype{collection}{
+  \clearfield{url}%
+  \clearfield{urldate}%
+ }{}
+ \ifentrytype{incollection}{
+  \clearfield{url}%
+  \clearfield{urldate}%
+ }{}
+ \ifentrytype{article}{
+ \clearfield{url}%
+ \clearfield{urldate}%
+}{}
+}
 % Add command for TODO
 \newcounter{todos}
 \newcommand{\todo}[1]{%
