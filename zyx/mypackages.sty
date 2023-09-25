@@ -135,8 +135,9 @@ captionpos=b, float=htbp, xleftmargin=2em,frame=single,framexleftmargin=1.5em, b
 % Delete some fields out of the bibentries
 \AtEveryBibitem{%
  \clearfield{note}%
- \clearfield{pages}%
- \clearfield{volume}%
+% If desired, other fields can be removed similarly
+%  \clearfield{pages}%
+%  \clearfield{volume}%
  %
  \ifentrytype{book}{
   \clearfield{url}%
